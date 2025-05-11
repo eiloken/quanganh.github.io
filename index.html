@@ -1,77 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name – CV</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; }
-    .container { max-width: 800px; margin: 40px auto; background: white; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #333; }
-    .section { margin-bottom: 20px; }
-    .section-header { border-bottom: 2px solid #e2e2e2; padding-bottom: 5px; margin-bottom: 10px; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 5px; }
-    .skills span { display: inline-block; background: #e2e2e2; margin: 2px; padding: 4px 8px; border-radius: 4px; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrical Engineer CV - Your Name</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header class="section">
-      <h1>Your Name</h1>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a> | Phone: +1 (555) 123-4567 | Location: City, Country</p>
-    </header>
+  <div id="full-container" class="container">
+    <button type="button" id="language-toggle" class="language-toggle ui-button">EN</button>
+    <button type="button" id="theme-toggle" class="theme-toggle ui-button">🌙 Dark mode</button>
+    <div class="title title-container">
+        <div class="title-name-container">
+            <div id="personal-image"></div>
+            <h1 class="title-name">Lê Việt Quang Anh</h1>
+            <p class="title-description">Production Engineer</p>
+        </div>
+        <div class="contact-info">
+            <span class="email-icon contact-icon"></span><a class="email-link" href="mailto:levietquanganh98@gmail.com">levietquanganh98@gmail.com</a>
+            <span class="vertical-line"></span>
+            <span class="phone-icon contact-icon"></span><span class="phone">+84 398 205 197</span>
+        </div>
+    </div>
 
-    <section class="section">
-      <h2 class="section-header">Summary</h2>
-      <p>Brief professional summary or objective that highlights your background and key strengths.</p>
-    </section>
+    <div id="about-me" class="title-container">
+        <h2 class="title-section">About Me</h2>
+        <p class="title-description">
+            I am pasionate electronics engineer with over 3 years of experience in assembling electronic circuit boards and medical devices. Additionally, I also have 3+ years of experience in web development and software development as a freelancer.
+        </p>
+    </div>
 
-    <section class="section">
-      <h2 class="section-header">Experience</h2>
-      <div>
-        <h3>Job Title – Company Name</h3>
-        <p><em>Month YYYY – Present</em></p>
-        <ul>
-          <li>Key responsibility or achievement #1.</li>
-          <li>Key responsibility or achievement #2.</li>
-          <li>Key responsibility or achievement #3.</li>
-        </ul>
-      </div>
-      <!-- Repeat for other positions -->
-    </section>
+    <div class="horizontal-container">
+        <div class="education-container">
+            <div id="education" class="title-container">
+                <h2 class="title-section">Education</h2>
+                <p class="title-description">1. Hanoi University of Industry, 2016-2021</p>
+            </div>
 
-    <section class="section">
-      <h2 class="section-header">Education</h2>
-      <div>
-        <h3>Degree – Institution Name</h3>
-        <p><em>Month YYYY – Month YYYY</em></p>
-        <p>Relevant coursework, honors, or thesis title.</p>
-      </div>
-      <!-- Repeat for other degrees -->
-    </section>
+            <div id="languages" class="title-container">
+                <h2 class="title-section">Languages</h2>
+                <p class="title-description">1. Vietnamese</p>
+                <p class="title-description">2. English</p>
+            </div>
+        </div>
 
-    <section class="section">
-      <h2 class="section-header">Skills</h2>
-      <div class="skills">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Node.js</span>
-        <!-- Add your skills -->
-      </div>
-    </section>
+        <div id="skills" class="title-container">
+            <h2 class="title-section">Skills</h2>
+            <ul id="skill-container" class="skill-container"></ul>
+        </div>
+    </div>
 
-    <section class="section">
-      <h2 class="section-header">Projects</h2>
-      <ul>
-        <li><strong>Project Name</strong>: Brief description with a <a href="#">link</a>.</li>
-        <!-- Add more projects -->
-      </ul>
-    </section>
+    <div id="experience" class="vertical-container">
+        <h2 class="title-section">Experience</h2>
+        <div class="experience-item">
+            <span class="dot"></span>
+            <div class="vertical-container">
+                <span class="experience-position">Production Engineering Engineer</span>
+                <div class="contact-info">
+                    <span class="experience-company">PE department of Taishodo Vietnam Co., Ltd</span>
+                    <span class="vertical-line"><span class="dot"></span></span>
+                    <span class="experience-date">2023-Present</span>
+                </div>
+                <p class="experience-description">
+                    Make Standard Operating Procedure (SOP) for assembly and repair process of Fundus Camera (NIDEK) and Endoscope (Fujifilm).
+                </p>
+                <p class="experience-description">
+                    Standard time calculation, departmental automation, digitalization implementation and work optimization.
+                </p>
+            </div>
+        </div>
 
-    <footer class="section">
-      <p>© 2025 Your Name. All rights reserved.</p>
-    </footer>
-  </div>
+        <div class="experience-item">
+            <span class="dot"></span>
+            <div class="vertical-container">
+                <span class="experience-position">Freelance Developer</span>
+                <div class="contact-info">
+                    <span class="experience-company">Freelance</span>
+                    <span class="vertical-line"><span class="dot"></span></span>
+                    <span class="experience-date">2022-Present</span>
+                </div>
+                <span class="experience-description">Make websites and software by request from clients.</span>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <span class="dot"></span>
+            <div class="vertical-container">
+                <span class="experience-position">Production Engineering Engineer</span>
+                <div class="contact-info">
+                    <span class="experience-company">PE department of Taishodo Vietnam Co., Ltd</span>
+                    <span class="vertical-line"><span class="dot"></span></span>
+                    <span class="experience-date">2022-2023</span>
+                </div>
+                <span class="experience-description">Make Standard Operating Procedure (SOP) for production process of electronic circuit boards (Kyocera, Toshiba, Fujifilm, NIDEK, etc.).</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-container">
+        <h2 class="title-section">Projects</h2>
+        <div id="projects" class="projects-container">
+            <div class="title-container">
+                <div class="project-item">
+                    <h3 class="project-name">PLOT<span class="project-status ongoing">Ongoing</span></h3>
+                    <p class="contact-info">HTML, CSS, JavaScript</p>
+                    <p class="project-description">PCB Layout Organization and Tracking, a powerful web application for managing PCB layout and track all the components on the PCB.</p>
+                </div>
+            </div>
+
+            <div class="title-container">
+                <div class="project-item">
+                    <h3 class="project-name">PDF Signer<span class="project-status completed">Completed</span></h3>
+                    <p class="contact-info">Python</p>
+                    <p class="project-description">An windows application used for signing multiple PDF files by PKCS#12 digital certificate.</p>
+                </div>
+            </div>
+
+            <div class="title-container">
+                <div class="project-item">
+                    <h3 class="project-name">PCB Viewer<span class="project-status completed">Completed</span></h3>
+                    <p class="contact-info">Excel VBA</p>
+                    <p class="project-description">An Excel VBA application used for viewing and editing PCB layout, this is just like PLOT but less powerful with limited features.</p>
+                </div>
+            </div>
+
+            <div class="title-container">
+                <div class="project-item">
+                    <h3 class="project-name">Office Automation Extension<span class="project-status completed">Completed</span></h3>
+                    <p class="contact-info">Excel VBA</p>
+                    <p class="project-description">An extension for Microsoft Excel that add multiple features to help user to work more efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<script>
+    const skills = {
+        "Software": {
+            "Word": { "title": "Microsoft Word", "level": 90 },
+            "Excel": { "title": "Microsoft Excel", "level": 90 },
+            "PowerPoint": { "title": "Microsoft PowerPoint", "level": 70 },
+            "KiCad": { 'title': 'KiCad', 'level': 60 },
+        },
+
+        "Technical Skills": {
+            "ISO 9001; 13485": { 'title': 'ISO 9001, 13485', 'level': 80 },
+            "5S": { 'title': 'SEIRI, SEITON, SEISO, SEIKETSU, SHITSUKE', 'level': 90 },
+            "5WHYS": { 'title': '5 WHY', 'level': 90 },
+            "MODAPTS": { 'title': 'MODular Arrangement of Predetermined Time Standards', 'level': 90 },
+            "APQP": { 'title': 'Advance Product Quality Planning', 'level': 70 },
+            "FMEA": { 'title': 'Failure Mode and Effects Analysis', 'level': 80 },
+            "SPC": { 'title': 'Statistical Process Control', 'level':70 },
+            "MSA": { 'title': 'Measurement System Analysis', 'level': 60 },
+            "PPAP": { 'title': 'Production Part Approval Process', 'level': 50 },
+        },
+
+        "Programming": {
+            "HTML": { 'title': 'HTML', 'level': 70 },
+            "CSS": { 'title': 'CSS', 'level': 70 },
+            "JavaScript": { 'title': 'JavaScript', 'level': 60 },
+            "Python": { 'title': 'Python', 'level': 40 },
+            "SQL": { 'title': 'SQL', 'level': 40 },
+            "VBA": { 'title': 'Visual Basic for Applications', 'level': 90 },
+        }
+    }
+
+    const $ = id => document.getElementById(id);
+
+    const skillContainer = $('skill-container');
+    
+    Object.keys(skills).forEach(group => {
+        const groupElement = document.createElement('li');
+        skillContainer.appendChild(groupElement);
+
+        const groupTitle = document.createElement('div');
+        groupTitle.classList.add('group-title');
+        groupElement.appendChild(groupTitle);
+
+        const groupName = document.createElement('span');
+        groupName.classList.add('group-name');
+        groupName.textContent = group;
+        groupTitle.appendChild(groupName);
+
+        const groupExpandIcon = document.createElement('span');
+        groupExpandIcon.classList.add('group-expand-icon');
+        groupTitle.appendChild(groupExpandIcon);
+
+        const expandGroup = document.createElement('div');
+        expandGroup.classList.add('expaned-group');
+        groupElement.appendChild(expandGroup);
+
+        const skillItems = skills[group];
+        Object.keys(skillItems).forEach(skill => {
+            const skillItem = document.createElement('div');
+            skillItem.title = skillItems[skill].title;
+            skillItem.classList.add('skill-item');
+            expandGroup.appendChild(skillItem);
+
+            const skillTitle = document.createElement('div');
+            skillTitle.classList.add('skill-title');
+            skillItem.appendChild(skillTitle);
+
+            const skillName = document.createElement('span');
+            skillName.classList.add('skill-name');
+            skillName.textContent = skill;
+            skillTitle.appendChild(skillName);
+
+            const level = skillItems[skill].level;
+
+            const skillLevel = document.createElement('span');
+            skillLevel.classList.add('skill-level');
+            skillLevel.textContent = level + '%';
+            skillTitle.appendChild(skillLevel);
+
+            const skillBar = document.createElement('div');
+            skillBar.classList.add('skill-bar');
+            skillItem.appendChild(skillBar);
+
+            const skillBarFill = document.createElement('div');
+            skillBarFill.classList.add('skill-bar-fill');
+            skillBarFill.style.backgroundColor = level < 50 ? 'var(--skill-level-low)' : level < 75 ? 'var(--skill-level-medium)' : 'var(--skill-level-high)';
+            skillBarFill.style.width = level + '%';
+            skillBar.appendChild(skillBarFill);
+            
+        });
+
+        groupElement.addEventListener('click', () => groupElement.classList.toggle('expaned'));
+            
+    });
+
+    
+    const themeToggle = $('theme-toggle');
+    const currentTheme = () => {
+        const theme = localStorage.getItem('theme');
+        if (theme) return theme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    themeToggle.textContent = currentTheme() === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+    $('full-container').setAttribute('data-theme', currentTheme());
+    function toggleTheme() {
+        const newTheme = (currentTheme() === 'dark') ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+        $('full-container').setAttribute('data-theme', newTheme);
+    }
+
+    themeToggle.addEventListener('click', toggleTheme);
+</script>
 </html>
