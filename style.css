@@ -54,12 +54,20 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2em;
     gap: 2em;
     background: var(--blur-background);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .ui-button {
@@ -92,13 +100,17 @@ body {
 
 .container > * {
     width: 100%;
-    max-width: 1000px;
 }
 
 .horizontal-container {
     display: flex;
     flex-direction: row;
     gap: 1em;
+}
+
+.horizontal-container.centered {
+    justify-content: center;
+    align-items: center;
 }
 
 .horizontal-container > .title-container, .education-container {
@@ -119,8 +131,8 @@ body {
 .title-container {
     display: flex;
     flex-direction: column;
-    border-radius: 2em;
-    padding: 1.5em;
+    border-radius: 1em;
+    padding: 1em;
     background: var(--blur-background);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -162,6 +174,17 @@ body {
     align-items: center;
     color: var(--blur-text-color);
     font-size: 0.8em;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.contact-info > * {
+    color: var(--blur-text-color);
+}
+
+.first-item, .second-item {
+    align-items: center;
+    gap: 0;
 }
 
 .contact-icon {
@@ -274,14 +297,6 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.vertical-line {
-    width: 1px;
-    height: 1em;
-    margin: 0 0.5em;
-    background: var(--blur-text-color);
-    overflow: visible;
-}
-
 .experience-item {
     position: relative;
     display: flex;
@@ -296,6 +311,18 @@ body {
 .experience-position {
     font-weight: bold;
 }
+.experience-date-company-container {
+    justify-content: flex-start;
+}
+
+.experience-date {
+    min-width: 6em;
+}
+
+.experience-company {
+    padding-left: 0.5em;
+    border-left: 2px solid var(--skill-level-high);
+}
 
 .dot {
     position: absolute;
@@ -309,8 +336,9 @@ body {
     background: var(--skill-bar-color);
 }
 
-.experience-description {
+.title-description {
     font-size: 0.8em;
+    text-align: justify;
 }
 
 .projects-container {
@@ -344,7 +372,23 @@ body {
     font-size: 0.8em;
 }
 
+@media (max-width: 768px) {
+    .responsive-container {
+        flex-direction: column;
+    }
 
+    .responsive-container > * {
+        width: 100%;
+    }
+
+    .responsive-container > .title-container, .responsive-container > .education-container {
+        flex: 0 0 auto;
+    }
+
+    .contact-info {
+        gap: 0.5em;
+    }
+}
 
 
 
