@@ -372,6 +372,27 @@ body {
     font-size: 0.8em;
 }
 
+.download-cv-button {
+    width: 10em;
+    height: 3em;
+    border-radius: 1.5em;
+    border: none;
+    margin: 2em auto;
+    background-color: var(--blur-background);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px var(--shadow-color);
+    font-weight: bold;
+}
+
+.download-cv-button:hover {
+    box-shadow: 
+        0 0 5px var(--shadow-color),
+        0 0 10px var(--shadow-color),
+        0 0 15px var(--shadow-color);
+}
+
 @media (max-width: 768px) {
     .responsive-container {
         flex-direction: column;
@@ -390,5 +411,38 @@ body {
     }
 }
 
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 10px;
+    }
+
+    html, body, #full-container {
+        height: auto !important;
+        overflow: visible !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    #about-me, #education-container, #skills, #experience, #projects-container {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    .experience-item, .project-item {
+        page-break-inside: avoid;
+        break-inside: avoid-column;
+    }
+
+    .page-break {
+        display: block;
+        page-break-before: always;
+        break-before: page;
+    }
+
+    .ui-button {
+        display: none;
+    }
+}
 
 
