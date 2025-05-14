@@ -657,7 +657,7 @@
         </div>
     </div>
 
-    <a href="#" id="print-button" class="print-button" download="LEVIETQUANGANH_CV_EN.pdf">Download CV</a>
+    <button type="button" id="print-button" class="print-button">Download CV</button>
 
     <!--div class="page-break"></div-->
 </div>
@@ -873,10 +873,6 @@
         localStorage.setItem('cv_language', newLanguage);
         $('language-toggle').textContent = newLanguage;
         translatePage();
-
-        const printButton = $('print-button');
-        const fileName = currentLanguage() === 'EN' ? 'LEVIETQUANGANH_CV_EN.pdf' : 'LEVIETQUANGANH_CV_VN.pdf';
-        printButton.download = fileName;
     }
 
     function translatePage() {
@@ -885,5 +881,14 @@
     }
 
     $('language-toggle').addEventListener('click', toggleLanguage);
+
+    $('print-button').addEventListener('click', (e) => {
+        e.preventDefault();
+        const link = document.createElement('a');
+        const fileName = currentLanguage() === 'EN' ? 'LEVIETQUANGANH_CV_EN.pdf' : 'LEVIETQUANGANH_CV_VN.pdf';
+        link.href = fileName;
+        link.download = fileName;
+        link.click();
+    });
 </script>
 </html>
