@@ -18,6 +18,8 @@
         --blur-text-color: #7e7e7e;
         --text-color: #000000;
         --shadow-color: rgba(0, 0, 0, 0.3);
+        --button-face-color: #000000;
+        --button-text-color: #ffffff;
     }
 
     [data-theme="dark"] {
@@ -29,6 +31,8 @@
         --blur-text-color: #afafaf;
         --text-color: #ffffff;
         --shadow-color: rgba(255, 255, 255, 0.3);
+        --button-face-color: #ffffff;
+        --button-text-color: #000000;
     }
 
     * {
@@ -83,18 +87,40 @@
         top: 5px;
         border-radius: 0.5em;
         padding: 0.5em 1em;
-        background-color: var(--blur-background);
         outline: none;
         border: none;
         transition: all 0.3s ease-in-out;
         box-shadow: 0 0 5px var(--shadow-color);
+        font-weight: bold;
+        background-color: var(--button-face-color);
+        color: var(--button-text-color);
     }
 
     .ui-button:hover {
-        box-shadow: 
-            0 0 5px var(--shadow-color),
-            0 0 10px var(--shadow-color),
-            0 0 15px var(--shadow-color);
+        background-color: var(--button-text-color);
+        color: var(--button-face-color);
+    }
+
+    .print-button {
+        width: fit-content !important;
+        padding: 1em 2em;
+        border-radius: 1.5em;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 5px var(--shadow-color);
+        background-color: var(--button-face-color);
+        color: var(--button-text-color);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .print-button:hover {
+        background-color: var(--button-text-color);
+        color: var(--button-face-color);
+    }
+
+    .print-button:visited {
+        text-decoration: none;
     }
 
     .theme-toggle {
@@ -479,7 +505,7 @@
             break-before: page;
         }
 
-        .ui-button {
+        .ui-button, .print-button {
             display: none;
         }
     }
@@ -630,6 +656,8 @@
             </div>
         </div>
     </div>
+
+    <a href="#" id="print-button" class="print-button" download="LEVIETQUANGANH_CV_EN.pdf">Download CV</a>
 
     <!--div class="page-break"></div-->
 </div>
@@ -845,6 +873,10 @@
         localStorage.setItem('cv_language', newLanguage);
         $('language-toggle').textContent = newLanguage;
         translatePage();
+
+        const printButton = $('print-button');
+        const fileName = currentLanguage() === 'EN' ? 'LEVIETQUANGANH_CV_EN.pdf' : 'LEVIETQUANGANH_CV_VN.pdf';
+        printButton.download = fileName;
     }
 
     function translatePage() {
